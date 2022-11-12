@@ -31,37 +31,40 @@ export const InteractiveRating = () => {
   return (
     <div className="h-screen bg-Black-Blue">
       {!view ? (
-        <div className="p-8 rounded-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-Dark-Blue absolute w-[400px]">
+        <div className="sm:p-8 p-6 sm:rounded-3xl rounded-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-Dark-Blue absolute sm:w-[400px] w-[324px]">
           <div
             id="star"
-            className="rounded-full p-4 bg-Round-Back w-[50px] h-[50px] flex items-center justify-center"
+            className="rounded-full sm:p-4 p-3 bg-Round-Back sm:w-[50px] w-10 sm:h-[50px] h-10 flex items-center justify-center"
           >
             <img src="/image/icon.svg" alt="Star" />
           </div>
-          <div id="text" className="my-8 font-Overpass">
+          <div id="text" className="sm:my-8 my-4 font-Overpass">
             <h1 id="title" className="text-white font-bold text-[22px] mb-4">
               How did we do?
             </h1>
             <h2
               id="description"
-              className="font-normal text-Medium-Grey text-base tracking-wide leading-7"
+              className="font-normal text-Medium-Grey text-base -tracking-[0.1px] sm:leading-7 leading-5 sm:mb-0 mb-6"
             >
               Please let us know how we did with your support request. All
               feedback is appreciated to help us improve our offering!
             </h2>
           </div>
-          <div id="buttons" className="grid grid-rows-2 gap-8">
-            <div className="grid grid-cols-5 gap-6">
+          <div
+            id="buttons"
+            className="grid grid-rows-2 sm:gap-8 gap-6 sm:my-0 my-2"
+          >
+            <div className="grid grid-cols-5 sm:gap-6 gap-4">
               <>
                 {buttons.map((button) => (
                   <>
                     {select === button.id ? (
-                      <div className="p-4 rounded-full cursor-pointer bg-Orange w-[50px] h-[50px] flex items-center justify-center text-white">
+                      <div className="sm:p-4 p-3 rounded-full cursor-pointer bg-Orange sm:w-[50px] w-[42px] sm:h-[50px] h-[42px] flex items-center justify-center text-white">
                         <p className="text-base">{button.title}</p>
                       </div>
                     ) : (
                       <div
-                        className="p-4 bg-Round-Back rounded-full cursor-pointer hover:bg-Light-Grey active:bg-Orange w-[50px] h-[50px] flex items-center justify-center hover:text-white active:text-white text-Medium-Grey"
+                        className="sm:p-4 p-3 bg-Round-Back rounded-full cursor-pointer hover:bg-Light-Grey active:bg-Orange sm:w-[50px] w-[42px] sm:h-[50px] h-[42px] flex items-center justify-center hover:text-white active:text-white text-Medium-Grey"
                         onClick={() => setSelect(button.id)}
                       >
                         <p className="text-base">{button.title}</p>
